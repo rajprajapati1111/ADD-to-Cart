@@ -1,0 +1,37 @@
+<script>
+
+    //set method 
+
+    let mobiles =[ 
+        {
+            name : "i phone",
+            storage : "12gb",
+        },
+        {
+            name : "samsung ",
+            storage : "8gb",
+        },
+        {
+            name : "redmi",
+            storage : "6gb",
+        },
+        {
+            name : "nokia",
+            storage : "4gb",
+        },
+    ];
+
+     let mydata = JSON.stringify(mobiles);    
+      console.log(mydata);
+
+    localStorage.setItem('mobiles',mydata);  
+
+    // getitem
+
+    let result = localStorage.getItem('mobiles'); 
+    
+
+    let myobj = JSON.parse(result); console.log(myobj);
+    
+
+</script>

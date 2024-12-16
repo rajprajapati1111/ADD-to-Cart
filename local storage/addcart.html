@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .del {
+            width: 80px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cart">
+
+    </div>
+
+    <button onclick="" class="del">Delete all</button>
+
+    <script>
+        let cart = document.getElementById('cart');
+
+        let carrdata = localStorage.getItem('cart');
+        // console.log(carrdata);
+
+        let data = JSON.parse(carrdata);
+
+        // console.log(data);
+
+        data.forEach(val => {
+            cart.innerHTML +=`<div class="card">${val.name}</div>
+        <span>${val.std}</span>`
+        });
+
+        function del() {
+            localStorage.clear();
+
+            window.location.reload();
+        }
+
+
+    </script>
+</body>
+
+</html>
